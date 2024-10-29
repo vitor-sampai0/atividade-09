@@ -1,12 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    
+    <div class="main-container">
+        <div class="gray">
+            <div class="nav-gray">
+                <div class="left-nav-gray">
+                    <img class="img"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAfdJREFUSEu11UuoSFEUBuDvkphgIKG8ihCFgVAyQiEjjzEppZCipDBBjL1CKY+ZIlEiSYkMiJIByiMGSJJMGHidpXNq2519T13dPdtn/Xv9a+317//06OfV08/5dREMwkosw2xMrAt6jUe4jkv4USq0N4LFOIFJHV0+w0bcbsOVCHZhH50dNjl/YjsO5SRtBHuwt4+z2YKj6dmcYAlu9DF5HPtVzWU+HjQ5UoIBeILpLQRfsBOX69hqHMDQFuxdLGwjCLVcLFS/Dmez2Kb8OpL4AtyLfdrBhaqDVQWCkfiUxcbgXQF/GFtzgrcYVzgwCh+z2Gi8L+AfYk5O8A1DCgfW43QWC+0fL+A/Y0RO8LUwtMDFkHfUQw4xxLwOYliBIHINzwmeY8p/SDQ9+rRRYzrkM1jbQhDafoz7lSV8qONx/3MrH5pVPcroKF+nsCHvYDmuZsjoagVeFDqbhmuJCTawRbiVE8Q+Kp1Zo35jMl51XNtUhOE1Kzqd12xyqwjmmwn4POKRfS+QhOrOYU0dj+uMV/z3kbV1EN/CSfcnCd9UkjtS+39YyUDMqHUe5jY2wW7GsbSYkl3vrh2164fU5Aq73oZ4wf+s3hIsxUmM75hBCCEUc6cN11Xh4NqfQmEx/AmI4b9E2EEo6Aqig9bVRdBRfHe43wn+AAntVBlfO442AAAAAElFTkSuQmCC" />
+                    <img class="img"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPdJREFUSEvt1T9KA0EUgPFfLDyBFraSJtraCnqA2MRbJJWtQgIKlhaCp5CAYO+fC1gZSJXORs+g7sKuCRvGWSZEmyxs9eZ933szj5mGJX+NJfPVFbRxhhbW8YRr3McKrCPoZ5BBANTFzW+SmGAfzwXgfAbWwyk+sy728BKSxAR3OMIJriqQXHCBITqpgndsYBMfFcgW3jDBdqrgq0gMdZrH83+truABB7HJiMQfsyk7LNdUKysrXtAxHf+YoIyHxKH4D/ffBalbVbuDlWDuNv3zMV2dwdwZvGIndV+KvBF2Q3fRMS7RTJSMi6f1NiRI5IbTYi/awsJv+WErGShtNxwAAAAASUVORK5CYII=" />
+                </div>
+                <div class="right-nav-gray">
+                    <img class="img-arrow"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALxJREFUSEvt0jGKAlEQRdHjIgTNR3ENIswuBGPB7Yix4F5UcA+TmAuzCC2wQQys/9UGAzv9zb1Vr15Hy1+nZb6vIE34IyPqYYZlOj7VRw74DgMssM4kNREFfI8fHDHG6V2CLg5X+B9+S+AhL9kg4BHL6JJ9wCf4zyZv3jPBS/CSDVoXxBAvSbKImijvj1x8h1JBiG5rWtykGkEj2WKIOTZZm2oFwetjilUGL2lRCePhP89sUCX9CtK4Wo/oDIwQHhmOKR7aAAAAAElFTkSuQmCC" />
+                    <h2 class="return"> Back </h2>
+                </div>
+            </div>
+            <article class="tete">
+                <div class="bag">
+                    <div class="itens">
+                        <div class="item">
+                            <img class="img-boot" src="/img/boot.png" alt="img">
+                            <div class="divisor"></div>
+                            <div class="main">
+                                <div class="left-text-gray">
+
+                                    <h4 class="text-gray"> Adidas Shoes </h4>
+                                    <h5 class="text-gray"> Size: 8.5</h5>
+                                    <div class="color-boot">
+                                        <div class="teste">
+                                            <h5 class="text-gray"> Color: <div class="color-boot-ball"></div>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="right-text-gray">
+                                    <h5 class="text-gray"> Qty:
+                                        <button class="qty-btn" onclick="decreaseQty()">-</button>
+                                        <span id="qty">1</span>
+                                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                                    </h5>
+                                    <script>
+                                        let qty = 1;
+                                        function increaseQty() {
+                                            qty++;
+                                            document.getElementById('qty').innerText = qty;
+                                        }
+                                        function decreaseQty() {
+                                            if (qty > 1) {
+                                                qty--;
+                                                document.getElementById('qty').innerText = qty;
+                                            }
+                                        }
+                                    </script>
+                                    <h5 class="text-gray"> Price: $ 540</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-boot" src="/img/boot.png" alt="img">
+                            <div class="divisor"></div>
+                            <div class="main">
+                                <div class="left-text-gray">
+
+                                    <h4 class="text-gray"> Adidas Shoes </h4>
+                                    <h5 class="text-gray"> Size: 8.5</h5>
+                                    <div class="color-boot">
+                                        <div class="teste">
+                                            <h5 class="text-gray"> Color: <div class="color-boot-ball"></div>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="right-text-gray">
+                                    <h5 class="text-gray"> Qty:
+                                        <button class="qty-btn" onclick="decreaseQty()">-</button>
+                                        <span id="qty">1</span>
+                                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                                    </h5>
+                                    <script>
+                                        let qty = 1;
+                                        function increaseQty() {
+                                            qty++;
+                                            document.getElementById('qty').innerText = qty;
+                                        }
+                                        function decreaseQty() {
+                                            if (qty > 1) {
+                                                qty--;
+                                                document.getElementById('qty').innerText = qty;
+                                            }
+                                        }
+                                    </script>
+                                    <h5 class="text-gray"> Price: $ 540</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-boot" src="/img/boot.png" alt="img">
+                            <div class="divisor"></div>
+                            <div class="main">
+                                <div class="left-text-gray">
+
+                                    <h4 class="text-gray"> Adidas Shoes </h4>
+                                    <h5 class="text-gray"> Size: 8.5</h5>
+                                    <div class="color-boot">
+                                        <div class="teste">
+                                            <h5 class="text-gray"> Color: <div class="color-boot-ball"></div>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="right-text-gray">
+                                    <h5 class="text-gray"> Qty:
+                                        <button class="qty-btn" onclick="decreaseQty()">-</button>
+                                        <span id="qty">1</span>
+                                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                                    </h5>
+                                    <script>
+                                        let qty = 1;
+                                        function increaseQty() {
+                                            qty++;
+                                            document.getElementById('qty').innerText = qty;
+                                        }
+                                        function decreaseQty() {
+                                            if (qty > 1) {
+                                                qty--;
+                                                document.getElementById('qty').innerText = qty;
+                                            }
+                                        }
+                                    </script>
+                                    <h5 class="text-gray"> Price: $ 540</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-boot" src="/img/boot.png" alt="img">
+                            <div class="divisor"></div>
+                            <div class="main">
+                                <div class="left-text-gray">
+
+                                    <h4 class="text-gray"> Adidas Shoes </h4>
+                                    <h5 class="text-gray"> Size: 8.5</h5>
+                                    <div class="color-boot">
+                                        <div class="teste">
+                                            <h5 class="text-gray"> Color: <div class="color-boot-ball"></div>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="right-text-gray">
+                                    <h5 class="text-gray"> Qty:
+                                        <button class="qty-btn" onclick="decreaseQty()">-</button>
+                                        <span id="qty">1</span>
+                                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                                    </h5>
+                                    <script>
+                                        let qty = 1;
+                                        function increaseQty() {
+                                            qty++;
+                                            document.getElementById('qty').innerText = qty;
+                                        }
+                                        function decreaseQty() {
+                                            if (qty > 1) {
+                                                qty--;
+                                                document.getElementById('qty').innerText = qty;
+                                            }
+                                        }
+                                    </script>
+                                    <h5 class="text-gray"> Price: $ 540</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="total-price">
+                    <div class="total">
+                        <h2 class="text-gray"> Total: <div class="background-total"> $ 540 </div></h2>
+                    </div>
+                </footer>
+        </div>
+
+
+        </article>
+
+
+        <div class="black">
+        </div>
+    </div>
 </body>
+
 </html>
